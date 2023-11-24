@@ -151,6 +151,8 @@ preguntas = [
    
 ]
 
+preguntas_seleccionadas = random.sample(preguntas, 7)
+
 # Mensaje inicial centrado
 
 def mensaje_centrado(texto):
