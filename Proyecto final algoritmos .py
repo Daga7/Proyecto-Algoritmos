@@ -33,20 +33,20 @@ preguntas = [
         "opciones": ["Chino" , "Mandarin" , "Nipon" , "Nihogo"],
         "respuesta_correcta":"Mandarin" 
     },
-    {#
+    {
         "enunciado": "¿En que año aterrizo el apolo 11 en lal luna? ",
         "opciones": ["1969" , "1970" , "1968" , "1967"],
         "respuesta_correcta":"1969" 
     },
     {
-        "enunciado": "¿Cómo se llama a la lengua oficial china? ",
-        "opciones": ["Chino" , "Mandarin" , "Nipon" , "Nihogo"],
-        "respuesta_correcta":"Mandarin" 
+        "enunciado": "¿Cuál es el lugar más frío de la tierra? ",
+        "opciones": ["Rusia" , "Canada" , "Noruega" , "Antartida"],
+        "respuesta_correcta":"Antartida" 
     },
     {
-        "enunciado": "¿Cómo se llama a la lengua oficial china? ",
-        "opciones": ["Chino" , "Mandarin" , "Nipon" , "Nihogo"],
-        "respuesta_correcta":"Mandarin" 
+        "enunciado": "¿Quién escribió La Odisea? ",
+        "opciones": ["Homero" , "Platon" , "Leonardo" , "Gabriel Garcia"],
+        "respuesta_correcta":"Homero" 
     },
     {
         "enunciado": "¿Cómo se llama a la lengua oficial china? ",
@@ -59,14 +59,100 @@ preguntas = [
         "respuesta_correcta":"Mandarin"   
     },
     {
-      "enunciado": "¿Cómo se llama a la lengua oficial china? ",
-        "opciones": ["Chino" , "Mandarin" , "Nipon" , "Nihogo"],
-        "respuesta_correcta":"Mandarin"   
+      "enunciado": "¿Cómo se llama la capital de Mongolia? ",
+        "opciones": ["Ulan Bator" , "Darjan" , "Nipon" , "No tiene"],
+        "respuesta_correcta":"Ulan Bator"   
+    },
+    {
+        "enunciado": "¿Dónde se originaron los juegos olímpicos? ",
+        "opciones": ["Olimpia" , "Roma" , "Francia" , "Ninguna de las anteriores"],
+        "respuesta_correcta":"Olimpia"
+    },
+    {
+        "enunciado": "¿Qué cantidad de huesos en el cuerpo humano? ",
+        "opciones": ["205" , "206" , "207" , "211"],
+        "respuesta_correcta":"206"
+    },
+    {
+        "enunciado": "¿En qué año se acabó la II Guerra Mundial? ",
+        "opciones": ["1945" , "1938" , "1976" , "1976"],
+        "respuesta_correcta":"1945"
+    },
+    {
+        "enunciado": "¿En qué año se descubrio América? ",
+        "opciones": ["1452" , "1462" , "1482" , "1492"],
+        "respuesta_correcta":"1492"
+    },
+    {
+        "enunciado": "¿Quién es el autor de el Quijote? ",
+        "opciones": ["Homero" , "Miguel de cervantes" , "Gabrie Garcia" , "Leonardo"],
+        "respuesta_correcta":"Miguel de cervantes"
+    },
+    {
+        "enunciado": "¿Quién pintó la última cena? ",
+        "opciones": ["Dicaprio" , "da Vinci" , "Miguel Angel" , "Ninguna de las anteriores"],
+        "respuesta_correcta":"da Vinci"
+    },
+    {
+        "enunciado": "¿Quién asesino a Goliat? ",
+        "opciones": ["David" , "Samuel" , "Daniel" , "Moises"],
+        "respuesta_correcta":"David"
+    },
+    {
+        "enunciado": "¿cuántos capítulos tiene la biblia? ",
+        "opciones": ["920" , "1100" , "921" , "1189"],
+        "respuesta_correcta":"1189"
+    },
+    {
+        "enunciado": "¿cuántos libros tiene la biblia? ",
+        "opciones": ["80" , "75" , "73" , "82"],
+        "respuesta_correcta":"73"
+    },
+    {
+        "enunciado": "¿Cuál es el océano más grande? ",
+        "opciones": ["Pacífico" , "Atlantico"],
+        "respuesta_correcta":"Pacífico"
+    },
+    {
+        "enunciado": " ¿Cuál es el país más grande del mundo? ",
+        "opciones": ["China" , "Rusia" , "Japon" , "EE.UU"],
+        "respuesta_correcta":"Rusia"
+    },
+    {
+        "enunciado": "¿En qué año comenzó la II Guerra Mundial? ",
+        "opciones": ["1939" , "1938" , "1940" , "1937"],
+        "respuesta_correcta":"1939"
+    },
+    {
+        "enunciado": "Si 50 es el 100%, ¿cuánto es el 90%? ",
+        "opciones": ["40" , "45" , "30" , "35"],
+        "respuesta_correcta":"45"
+    },
+    {
+        "enunciado": "¿Cuál es tercer planeta en el sistema solar? ",
+        "opciones": ["Venus" , "Marte" , "Jupiter" , "Tierra"],
+        "respuesta_correcta":"Tierra"
+    },
+    {
+        "enunciado": "¿Cuál es la moneda del Reino Unido? ",
+        "opciones": ["Euro" , "Dolar" , "Pound"],
+        "respuesta_correcta":"Pound"
+    },
+    {
+        "enunciado": "¿Cómo se traduce libra esterlina a ingles? ",
+        "opciones": ["Pound" , "Sterling" , "Weight" , "Nihogo"],
+        "respuesta_correcta":"Pound"
+    },
+    {
+        "enunciado": "¿En qué año se separo la gran colombia? ",
+        "opciones": ["1819" , "1827" , "1831" , "1825"],
+        "respuesta_correcta":"1831"
     }
+   
 ]
 
-import time
-hola="hola"
+# Mensaje inicial centrado
+
 def mensaje_centrado(texto):
     # Obtén el ancho de la terminal actual
     terminal_ancho = 160
@@ -82,7 +168,7 @@ def mensaje_centrado(texto):
     # Salto de línea al final
     print()
 
-# Uso
+
 mensaje = "Bienvenidos a ¿quien quiere ser millonario?"
 mensaje_centrado(mensaje)
 
@@ -90,8 +176,10 @@ mensaje_centrado(mensaje)
 puntajes = {}
 
 def mostrar_instrucciones():
-    print("Responde correctamente y acumula puntos.")
-    print("Al final del juego, podrás ver tu puntaje.")
+    print("Responde correctamente y acumula puntos , la persona con mas puntos gana.")
+    print("Cada pregunta correcta sumara 5 puntos.")
+    print("El jugador tiene un maximo de 10 segundos para responder la pregunta si se pasa del tiempo la pregunta se contara como incorrecta .")
+    print("Si no desean jugar mas al final deberan poner n y solo mirar los puntajes , automaticamente el progrma dejara de funcionr y los puntajes seran borrados.")
     print("\n")
 
 def obtener_nombre():
@@ -157,7 +245,8 @@ while True:
 
     nuevo_jugador = input("¿Quieres comenzar como un nuevo jugador? (s/n): ")
     if nuevo_jugador.lower() != 's':
-        mostrar_menu()  # Agregado para mostrar el menú después del juego
+        mostrar_menu()  
+        # Agregado para mostrar el menú después del juego
         opcion_despues_juego = input("Selecciona una opción (1-3): ")
 
         if opcion_despues_juego == "2":
