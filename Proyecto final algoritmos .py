@@ -1,5 +1,5 @@
 import random
-import time 
+import time
 
 # Lista de preguntas con opciones y respuestas correctas
 preguntas = [
@@ -151,23 +151,17 @@ preguntas = [
    
 ]
 
-preguntas_seleccionadas = random.sample(preguntas, 7)
 
 # Mensaje inicial centrado
 
 def mensaje_centrado(texto):
-    # Obtén el ancho de la terminal actual
+    # Obténer  el ancho de la terminal actual
     terminal_ancho = 160
     # Calcula en blanco
     espacio_en_blanco = (terminal_ancho - len(texto)) // 2
 
-    # Imprime el espacio en blanco antes del mensaje
+    # Imprimir el espacio en blanco antes del mensaje
     print(" " * espacio_en_blanco, end='')
-
-    # Muestra cada letra con un intervalo de tiempo
-    for letra in texto:
-        print(letra, end='', flush=True)  
-    # Salto de línea al final
     print()
 
 
@@ -181,7 +175,7 @@ def mostrar_instrucciones():
     print("Responde correctamente y acumula puntos , la persona con mas puntos gana.")
     print("Cada pregunta correcta sumara 5 puntos.")
     print("El jugador tiene un maximo de 10 segundos para responder la pregunta si se pasa del tiempo la pregunta se contara como incorrecta .")
-    print("Si no desean jugar mas al final deberan poner n y solo mirar los puntajes , automaticamente el progrma dejara de funcionr y los puntajes seran borrados.")
+    print("Si no desean jugar mas al final deberan deberan poner n y solo mirar los puntajes , automaticamente el progrma dejara de funcionr y los puntajes ceran borrados.")
     print("\n")
 
 def obtener_nombre():
@@ -195,7 +189,9 @@ def mostrar_menu():
 
 def jugar():
     puntaje = 0
-    for i, pregunta in enumerate(preguntas, 1):
+    preguntas_al_azar = random.sample(preguntas, 6)
+
+    for i, pregunta in enumerate(preguntas_al_azar, 1):
         print(f"Pregunta {i}: {pregunta['enunciado']}")
         
         for j, opcion in enumerate(pregunta['opciones'], 1):
@@ -258,4 +254,5 @@ while True:
         else:
             print("Opción no válida. Volviendo al menú principal.")
         break
+        
         
