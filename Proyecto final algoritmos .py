@@ -152,22 +152,21 @@ preguntas = [
 ]
 
 
-# Mensaje inicial centrado
-
 def mensaje_centrado(texto):
-    # Obténer  el ancho de la terminal actual
+    # Obtén el ancho de la terminal actual
     terminal_ancho = 160
     # Calcula en blanco
     espacio_en_blanco = (terminal_ancho - len(texto)) // 2
 
-    # Imprimir el espacio en blanco antes del mensaje
+    # Imprime el espacio en blanco antes del mensaje
     print(" " * espacio_en_blanco, end='')
+    for letra in texto:
+        print(letra, end='', flush=True)  
     print()
 
-
+# Uso
 mensaje = "Bienvenidos a ¿quien quiere ser millonario?"
 mensaje_centrado(mensaje)
-
 # Diccionario para almacenar puntajes de jugadores
 puntajes = {}
 
@@ -175,7 +174,7 @@ def mostrar_instrucciones():
     print("Responde correctamente y acumula puntos , la persona con mas puntos gana.")
     print("Cada pregunta correcta sumara 5 puntos.")
     print("El jugador tiene un maximo de 10 segundos para responder la pregunta si se pasa del tiempo la pregunta se contara como incorrecta .")
-    print("Si no desean jugar mas al final deberan deberan poner n y solo mirar los puntajes , automaticamente el progrma dejara de funcionr y los puntajes ceran borrados.")
+    print("Si no desean seguir jugando , al final deberan poner n y solo mirar los puntajes , automaticamente el progrma dejara de funcionar y los puntajes seran borrados.")
     print("\n")
 
 def obtener_nombre():
@@ -244,6 +243,7 @@ while True:
     nuevo_jugador = input("¿Quieres comenzar como un nuevo jugador? (s/n): ")
     if nuevo_jugador.lower() != 's':
         mostrar_menu()  
+        
         # Agregado para mostrar el menú después del juego
         opcion_despues_juego = input("Selecciona una opción (1-3): ")
 
